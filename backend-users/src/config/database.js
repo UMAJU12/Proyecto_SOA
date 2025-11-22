@@ -1,12 +1,8 @@
-// src/config/database.js
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    const conn = await mongoose.connect(process.env.MONGODB_URI);
 
     console.log(`✅ MongoDB conectado: ${conn.connection.host}`);
     console.log(`📊 Base de datos: ${conn.connection.name}`);
