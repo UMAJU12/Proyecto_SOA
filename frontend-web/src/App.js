@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './components/Login';
 import AdminDashboard from './pages/AdminDashboard';
+import ProductsPage from './pages/ProductsPage';
 import './App.css';
 
 // Componente para proteger rutas
@@ -61,15 +62,12 @@ const AppRoutes = () => {
         }
       />
 
-      {/* Ruta para productos (próximamente) */}
+      {/* Ruta para productos */}
       <Route
         path="/admin/productos"
         element={
           <ProtectedRoute allowedRoles={['administrador']}>
-            <div style={{ padding: '40px', textAlign: 'center' }}>
-              <h1>📦 Gestión de Productos</h1>
-              <p>Esta funcionalidad estará disponible próximamente...</p>
-            </div>
+            <ProductsPage />
           </ProtectedRoute>
         }
       />

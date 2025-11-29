@@ -15,9 +15,11 @@ def create_app():
     app.config['JSON_AS_ASCII'] = False
     app.config['JSON_SORT_KEYS'] = False
     
-    # CORS
-    cors_origins = os.getenv('CORS_ORIGINS', '*').split(',')
-    CORS(app, origins=cors_origins)
+    # IMPORTANTE: Evitar redirecciones automáticas
+    app.url_map.strict_slashes = False
+    
+    # CORS - Configuración permisiva para desarrollo
+    CORS(app)
     
     # Importar y registrar blueprints
     from app.routes.product_routes import products_bp

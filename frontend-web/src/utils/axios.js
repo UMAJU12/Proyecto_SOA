@@ -13,7 +13,8 @@ export const productsAPI = axios.create({
   baseURL: 'http://localhost:5001/api',
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  withCredentials: false
 });
 
 // Interceptor para agregar token a las peticiones
