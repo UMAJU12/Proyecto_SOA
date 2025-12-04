@@ -1,0 +1,250 @@
+/* frontend-web/src/components/ProductsPage.css */
+
+.products-page {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Barra Superior (Buscador y Filtros) */
+.search-section {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.search-form {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+
+.search-input {
+  flex: 2;
+  padding: 10px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #555;
+  outline: none;
+}
+
+.filter-select {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: white;
+  color: #555;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Botones Superiores */
+.btn-search {
+  background-color: #5b73e8; /* Azul violeta */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-clear {
+  background-color: #f1f3f4;
+  color: #5f6368;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-new {
+  background-color: #4caf50; /* Verde */
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Grid de Tarjetas */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+  border: 1px solid #f0f0f0;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* Encabezado de la Tarjeta */
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+.card-header-row h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  flex: 1;
+  padding-right: 10px;
+}
+
+.stock-pill {
+  background-color: #4caf50;
+  color: white;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+.stock-pill.low {
+  background-color: #ff9800; /* Naranja para stock bajo */
+}
+
+.product-subtitle {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+/* Precio y Rating */
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.price-tag {
+  font-size: 22px;
+  font-weight: 800;
+  color: #5b73e8;
+}
+
+.rating-tag {
+  font-size: 13px;
+  color: #ffb400; /* Amarillo estrella */
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Badges de Categoría */
+.tags-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tag-badge {
+  background-color: #f1f3f4;
+  color: #5f6368;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Botones de Acción (Pie de tarjeta) */
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto; /* Empuja los botones al fondo */
+}
+
+.btn-edit, .btn-delete {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s;
+}
+
+.btn-edit {
+  background-color: #2196f3; /* Azul */
+}
+
+.btn-delete {
+  background-color: #f44336; /* Rojo */
+}
+
+.btn-edit:hover, .btn-delete:hover {
+  opacity: 0.9;
+}
+
+/* --- NUEVO CSS PARA TÍTULO Y LOGOUT --- */
+.top-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #f8f9fa; /* Fondo muy claro */
+    border-bottom: 1px solid #e9ecef;
+    margin-bottom: 20px;
+}
+
+.app-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #444; /* Gris oscuro para elegancia */
+    letter-spacing: 0.5px;
+}
+
+.btn-logout {
+    background-color: #dc3545; /* Rojo de peligro/salir */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+}
