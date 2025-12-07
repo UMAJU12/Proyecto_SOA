@@ -1,0 +1,147 @@
+
+.form-page {
+  background-color: rgba(0, 0, 0, 0.4); /* Efecto Overlay de Modal */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: fixed; /* Para que cubra toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Contenedor tipo Modal Blanco */
+.form-container {
+  background: white;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh; /* Para que no se salga en pantallas chicas */
+  overflow-y: auto;
+}
+
+/* Encabezado */
+.form-header {
+  padding: 20px 30px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-plus {
+  color: #7c4dff; /* Morado del icono */
+  font-size: 24px;
+}
+
+.btn-close-x {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+/* Cuerpo del Formulario */
+.form-body {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.input-field {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  border-color: #7c4dff; /* Focus morado */
+}
+
+textarea.input-field {
+  resize: none;
+  height: 80px;
+  font-family: inherit;
+}
+
+/* Pie del Formulario (Botones) */
+.form-footer {
+  padding: 20px 30px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancel {
+  background-color: #f1f3f4;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-save {
+  background-color: #4caf50; /* Verde */
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-save:hover {
+  background-color: #43a047;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+}
